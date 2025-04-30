@@ -36,4 +36,26 @@ export const SummaryContent = styled.div`
     margin-top: 1.5rem;
     line-height: 2rem;
   }
-`
+
+  #icons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* centraliza verticalmente o ícone e o nome */
+      gap: 0.5rem;
+      font-size: 14px;
+      text-decoration: none;
+      color: #6b6aa9;
+    }
+  }
+  a {
+      display: flex;
+      font-size: 14px;
+      text-decoration: none;
+      color: #6b6aa9;
+  }
+`;
