@@ -17,6 +17,7 @@ export const GlobalStyled = createGlobalStyle`
     background-color: ${(props) => props.theme["blue-600"]};
     color: ${(props) => props.theme["gray-100"]};
     --webckit-font-smoothing: anitialiased;
+    height: 100vh;
   }
 
   body, input, textarea, button {
