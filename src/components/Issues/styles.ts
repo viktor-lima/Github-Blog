@@ -30,8 +30,9 @@ export const ContentCard = styled.div`
   }
 
   span {
-    font-size: 12px;
+    font-size: 10px;
     color: #94a3b8;
     float: right;
+    padding-left: 1rem;
   }
 `;

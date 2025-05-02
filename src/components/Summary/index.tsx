@@ -5,44 +5,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BusinessIcon from '@mui/icons-material/Business';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import { GitHubUser } from "../../app/model/User";
 
 
-// types/GitHubUser.ts
-
-export interface GitHubUser {
-  login: string;
-  id: number;
-  node_id: string;
-  avatar_url: string;
-  gravatar_id: string;
-  url: string;
-  html_url: string;
-  followers_url: string;
-  following_url: string;
-  gists_url: string;
-  starred_url: string;
-  subscriptions_url: string;
-  organizations_url: string;
-  repos_url: string;
-  events_url: string;
-  received_events_url: string;
-  type: string;
-  site_admin: boolean;
-  name: string | null;
-  company: string | null;
-  blog: string;
-  location: string;
-  email: string | null;
-  hireable: boolean | null;
-  bio: string | null;
-  twitter_username: string | null;
-  public_repos: number;
-  public_gists: number;
-  followers: number;
-  following: number;
-  created_at: string;
-  updated_at: string;
-}
 
 
 export function Summary() {
@@ -59,7 +24,7 @@ export function Summary() {
     };
 
     fetchGitHubUser();
-  }, []);
+  }, []);  
 
   if (!userData) return <p>Carregando...</p>;
   console.log(userData.login);

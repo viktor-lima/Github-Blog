@@ -1,43 +1,27 @@
+import { useContext } from "react";
 import { Container, ContentCard } from "./styles";
+import { IssueContext } from "../context/IssueContext";
+import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 export function ContentLayout() {
+
+  const { issues } = useContext(IssueContext);
+
+
   return (
     <Container>
-      <ContentCard>
-        <span>Há 1 dia</span>
-        <h3>JavaScript data types and data structures</h3>
-        <p>
-          Programming languages all have built-in data structures, but these often differ from one
-          language to another. This article attempts to list the built-in data structures...
-        </p>
-      </ContentCard>
-
-      <ContentCard>
-        <span>Há 1 dia</span>
-        <h3>JavaScript data types and data structures</h3>
-        <p>
-          Programming languages all have built-in data structures, but these often differ from one
-          language to another. This article attempts to list the built-in data structures...
-        </p>
-      </ContentCard>
-
-      <ContentCard>
-        <span>Há 1 dia</span>
-        <h3>JavaScript data types and data structures</h3>
-        <p>
-          Programming languages all have built-in data structures, but these often differ from one
-          language to another. This article attempts to list the built-in data structures...
-        </p>
-      </ContentCard>
-
-      <ContentCard>
-        <span>Há 1 dia</span>
-        <h3>JavaScript data types and data structures</h3>
-        <p>
-          Programming languages all have built-in data structures, but these often differ from one
-          language to another. This article attempts to list the built-in data structures...
-        </p>
-      </ContentCard>
+      {/* Mapeando as issues e gerando um ContentCard para cada uma */}
+      {issues.map(issue => (
+        <ContentCard key={issue.id}>
+          <span>{formatDistanceToNow(issue.created_at, {
+            addSuffix: true,
+            locale: ptBR
+          })}</span> {/* Formatação da data */}
+          <h3>{issue.title}</h3>
+          <p>{issue.body.slice(0, 220) + "..."}</p>
+        </ContentCard>
+      ))}
     </Container>
   );
 }
