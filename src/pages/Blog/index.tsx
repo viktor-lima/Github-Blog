@@ -1,11 +1,10 @@
 
-import { BlogContainer } from "./index";
+import { BlogContainer } from "./styles";
 import { Summary } from "../../components/Summary";
 import { Header } from "../../components/header";
 import { SearchForm } from "../components/SearchForm";
 import { ContentLayout } from "../../components/Issues";
 import { IssueProvider } from "../../components/context/IssueContext";
-
 
 export function Blog(){
 
@@ -16,7 +15,7 @@ export function Blog(){
       <BlogContainer>
         <IssueProvider>
           <SearchForm />
-          <ContentLayout />
+            <ContentLayout />
         </IssueProvider>
       </BlogContainer>
     </div>

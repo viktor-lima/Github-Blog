@@ -6,6 +6,9 @@ export const Container = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   padding: 20px;
+  #active {
+    text-decoration: none;
+  }
 `;
 
 export const ContentCard = styled.div`
