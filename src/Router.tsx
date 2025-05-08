@@ -7,7 +7,7 @@ export function Router() {
     <Routes>
       <Route>
         <Route path="/" element={<Blog />} /> {/* Corrigindo o caminho */}
-        <Route path="details/:id" element={<Details />} /> {/* Corrigindo o caminho */}
+        <Route path="details/:number" element={<Details />} /> {/* Corrigindo o caminho */}
       </Route>
     </Routes>
   );

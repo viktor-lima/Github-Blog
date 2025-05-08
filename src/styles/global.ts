@@ -13,11 +13,10 @@ export const GlobalStyled = createGlobalStyle`
   }
 
   body {
-    height: 100%;
     background-color: ${(props) => props.theme["blue-600"]};
     color: ${(props) => props.theme["gray-100"]};
-    --webckit-font-smoothing: anitialiased;
     height: 100vh;
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {

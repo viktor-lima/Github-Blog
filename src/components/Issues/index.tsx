@@ -13,7 +13,7 @@ export function ContentLayout() {
   return (
     <Container>
       {issues.map(issue => (
-        <NavLink to={`/details/${issue.id}`} title="Details" id="active" key={issue.id}>
+        <NavLink to={`/details/${issue.number}`} title="Details" id="active" key={issue.id}>
           <ContentCard key={issue.id}>
             <span>{formatDistanceToNow(issue.created_at, {
               addSuffix: true,

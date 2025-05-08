@@ -1,18 +1,15 @@
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/header";
-import { Summary } from "../../components/Summary";
+import { SummaryDetails } from "../../components/SummaryDetails";
 
 
 export function Details(){
-  const { id } = useParams();
+  const { number } = useParams();
+
   return (
     <div>
         <Header />
-        <div>
-          <h1>Detalhes da Issue {id}</h1>
-          {/* Aqui você pode buscar os dados da issue com base no id */}
-        </div>
-        <Summary />
+        <SummaryDetails number={number || ''} />
       {/* <BlogContainer>
         <IssueProvider>
           <SearchForm />

@@ -17,7 +17,7 @@ export const ContentCard = styled.div`
   border-radius: 12px;
   padding: 24px;
   width: 500px;
-  max-height: 20rem;
+  height: 10rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
   h3 {
