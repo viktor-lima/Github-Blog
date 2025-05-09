@@ -16,7 +16,30 @@ export const SummaryCard = styled.div`
   background: ${props => props.theme["blue-400"]};
   width: 100%;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1rem;
+  #back {
+
+    #arrowBack {
+      font-size: 1rem;
+    }
+    text-decoration: none;
+    div {
+
+      p {
+        font-size: 1rem;
+      }
+
+      display: flex;
+      align-items: center;
+      color: #6b6aa9;
+      
+    }
+
+    :hover{
+      color: ${props => props.theme["gray-100"]};
+    }
+
+  }
 `
 
 export const SummaryContent = styled.div`
@@ -29,17 +52,13 @@ export const SummaryContent = styled.div`
     border-radius: 10px;
   }
 
-  h1 {
-    margin: 0; 
-  }
-
   p {
     margin-top: 1.5rem;
     line-height: 2rem;
   }
 
   #icons {
-    margin-top: 1rem;
+    margin-top: .5rem;
     display: flex;
     gap: 1rem;
 

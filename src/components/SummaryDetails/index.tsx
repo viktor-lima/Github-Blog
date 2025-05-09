@@ -10,6 +10,9 @@ import { ptBR } from 'date-fns/locale';
 import remarkGfm from 'remark-gfm'
 import Markdown from 'react-markdown'
 import 'github-markdown-css/github-markdown.css';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { NavLink } from "react-router-dom";
+import LaunchIcon from '@mui/icons-material/Launch';
 
 type SummaryDetailsProps = {
   number: string
@@ -39,6 +42,17 @@ export function SummaryDetails(props: SummaryDetailsProps) {
   return (
     <SummaryContainer>
       <SummaryCard>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          <NavLink to={'/'} id="back">
+            <div>
+              <ArrowBackIosIcon id="arrowBack" />
+              <p style={{fontSize: '1rem'}}>voltar</p> 
+            </div>
+          </NavLink>
+          <a href={data.html_url} target="_blank" rel="noopener noreferrer">
+            <GitHubIcon style={{ fontSize: 32, color: '#6b6aa9' }} />
+          </a>
+        </div>
         <SummaryContent>
           <div>
             <h1>{data.title}</h1>
@@ -49,7 +63,6 @@ export function SummaryDetails(props: SummaryDetailsProps) {
                   <div style={{ fontSize: 12 }}>{data.user.login}</div>
                 </a>
               )}
-
               <a>
                 <CalendarMonthIcon fontSize="small" />
                 <div style={{ fontSize: 12 }}>
@@ -68,14 +81,7 @@ export function SummaryDetails(props: SummaryDetailsProps) {
               </a>
             </div>
           </div>
-          <a href={data.html_url} target="_blank" rel="noopener noreferrer">
-            <GitHubIcon style={{ fontSize: 32, color: '#6b6aa9' }} />
-          </a>
         </SummaryContent>
-        {/* <ContentBody>
-          <Markdown remarkPlugins={[remarkGfm]}>{markdow?.toString()}</Markdown>
-        </ContentBody> */}
-
       </SummaryCard>
         <ContentBody className="markdown-body">
           <Markdown remarkPlugins={[remarkGfm]}>
